@@ -1,0 +1,154 @@
+﻿@model IEnumerable<AssesmentApp.Models.adtrack_test>
+
+@{
+    //Layout = null;
+}
+
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+</head>
+<body>
+    <fieldset>
+        <div class="form-horizontal">
+            <div class="col-md-12">
+                <div class="col-md-4" style="margin-top: 20px; margin-bottom: 20px">
+
+                    @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.PlatformDDL, new { id = "PlatformDDL", @class = "form-control" })
+                </div>
+                <div class="col-md-4" style="margin-top: 20px; margin-bottom: 20px">
+
+                    @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.PublisherDDL, new { id = "PublisherDDL", @class = "form-control" })
+                </div>
+                <div class="col-md-3" style="margin-top: 20px; margin-bottom: 20px">
+
+                    @Html.DropDownList("ObjList", (IEnumerable<SelectListItem>)ViewBag.BrandDDL, new { id = "BrandDDL", @class = "form-control" })
+                </div>
+                <div class="col-md-1" style="margin-top: 20px; margin-bottom: 20px">
+                    <input type="submit" value="Search" class="btn-primary" />
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4" style="margin-top: 20px; margin-bottom: 20px">
+                    @*@Html.EditorFor(model => model.FirstOrDefault().TimeStamp, new { htmlAttributes = new { @class = "form-control" } })*@  
+                </div>
+                                
+            </div>
+
+            <div class ="col-md-12">
+                @using (Html.BeginForm("ExportToExcel", "Reports", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+
+                    <div>
+                        <input type="submit" value="Export" class="btn-primary" />
+                    </div>
+
+                }
+</div>
+
+        </div>       
+    </fieldset>
+
+    
+
+</body>
+</html>
+
+
+<h2>Product Details</h2>
+
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+    <div class="modal-section-header">
+        <p></p>
+    </div>
+
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 table-responsive gtcustomgrid">
+        <table class="table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Sr No</th>
+                    <th>Image</th>
+                    <th>Advertiser </th>
+                    <th>Publisher</th>
+                    <th>PlatformType</th>
+                    <th>DeviceModel</th>
+                    <th>Date</th>
+                    <th>time</th>
+
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tbody>
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Id, new { @id = "SrNo", @class = "form-control" })</td>
+                        <td><img width="250px" height="200px" src="@Url.Content(item.ImageUrl)" alt="Image" /></td>
+                        <td>@Html.DisplayFor(modelItem => item.advertiserName, new { @id = "advertiserName", @class = "form-control" })</td>
+                        <td>@Html.DisplayFor(modelItem => item.BrandName, new { @id = "BrandName", @class = "form-control" })</td>
+                        <td>@Html.DisplayFor(modelItem => item.PlatformType, new { @id = "PlatformType", @class = "form-control" })</td>
+                        <td>@Html.DisplayFor(modelItem => item.DeviceModel, new { @id = "DeviceModel", @class = "form-control" })</td>
+                        <td>@Html.DisplayFor(modelItem => item.TimeStamp, new { @id = "TimeStamp", @class = "form-control" })</td>
+                        <td>@Html.DisplayFor(modelItem => item.TimeStamp, new { @id = "TimeStamp", @class = "form-control" })</td>
+
+                    </tr>
+                </tbody>
+            }
+        </table>
+    </div>
+</div>
+@section scripts{
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script> 
+    <script>
+
+        $(document).ready(function () {
+            $("#TimeStamp").datepicker({
+
+                dateFormat: "dd-mm-yy",
+                changeMonth: true,
+                changeYear: true
+
+            });
+        });
+
+        $("#upload").click(function () {
+            debugger;
+            if (window.FormData == undefined)
+                alert("Error: FormData is undefined");
+
+            else {
+                var fileUpload = $("#postedFile").get(0);
+                var files = fileUpload.files;
+
+                var fileData = new FormData();
+
+                fileData.append(files[0].name, files[0]);
+
+                $.ajax({
+                    url: '/Reports/ImportFromExcel',
+                    type: 'post',
+                    datatype: 'json',
+                    contentType: false,
+                    processData: false,
+                    async: false,
+                    data: fileData,
+                    success: function (response) {
+                        alert(response);
+                    }
+                });
+            }
+
+        });
+    </script>
+
+}

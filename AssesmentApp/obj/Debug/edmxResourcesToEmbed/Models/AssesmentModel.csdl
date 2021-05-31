@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AssesmentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="adtrack_test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="TimeStamp" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PlatformType" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DeviceModel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImageName" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ImageUrl" Type="String" MaxLength="73" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="CompanyId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="BrandName" Type="String" MaxLength="78" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Name" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="is_youtube" Type="Boolean" Nullable="false" />
+    <Property Name="GDriveLink" Type="String" MaxLength="33" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DestinationLink" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="category_name" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="advertiserName" Type="String" MaxLength="69" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AssesmentDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="adtrack_test" EntityType="Self.adtrack_test" />
+  </EntityContainer>
+</Schema>

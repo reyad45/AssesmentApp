@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AssesmentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adtrack_test">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="TimeStamp" Type="varchar" MaxLength="23" Nullable="false" />
+    <Property Name="PlatformType" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="DeviceModel" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="ImageName" Type="varchar" MaxLength="35" Nullable="false" />
+    <Property Name="ImageUrl" Type="varchar" MaxLength="73" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="CompanyId" Type="varchar" MaxLength="2" />
+    <Property Name="BrandName" Type="varchar" MaxLength="78" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="24" Nullable="false" />
+    <Property Name="is_youtube" Type="bit" Nullable="false" />
+    <Property Name="GDriveLink" Type="varchar" MaxLength="33" Nullable="false" />
+    <Property Name="DestinationLink" Type="varchar" MaxLength="255" />
+    <Property Name="FirstName" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="category_name" Type="varchar" MaxLength="23" Nullable="false" />
+    <Property Name="advertiserName" Type="varchar" MaxLength="69" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="AssesmentDBModelStoreContainer">
+    <EntitySet Name="adtrack_test" EntityType="Self.adtrack_test" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

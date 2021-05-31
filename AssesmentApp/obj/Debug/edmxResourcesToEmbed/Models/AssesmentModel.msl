@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AssesmentDBModelStoreContainer" CdmEntityContainer="AssesmentDBEntities">
+    <EntitySetMapping Name="adtrack_test">
+      <EntityTypeMapping TypeName="AssesmentDBModel.adtrack_test">
+        <MappingFragment StoreEntitySet="adtrack_test">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+          <ScalarProperty Name="PlatformType" ColumnName="PlatformType" />
+          <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+          <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="is_youtube" ColumnName="is_youtube" />
+          <ScalarProperty Name="GDriveLink" ColumnName="GDriveLink" />
+          <ScalarProperty Name="DestinationLink" ColumnName="DestinationLink" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="category_name" ColumnName="category_name" />
+          <ScalarProperty Name="advertiserName" ColumnName="advertiserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

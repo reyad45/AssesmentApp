@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AssesmentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adtrack_test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="TimeStamp" Type="varchar" MaxLength="23" Nullable="false" />
+          <Property Name="PlatformType" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="DeviceModel" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ImageName" Type="varchar" MaxLength="35" Nullable="false" />
+          <Property Name="ImageUrl" Type="varchar" MaxLength="73" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CompanyId" Type="varchar" MaxLength="2" />
+          <Property Name="BrandName" Type="varchar" MaxLength="78" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="24" Nullable="false" />
+          <Property Name="is_youtube" Type="bit" Nullable="false" />
+          <Property Name="GDriveLink" Type="varchar" MaxLength="33" Nullable="false" />
+          <Property Name="DestinationLink" Type="varchar" MaxLength="255" />
+          <Property Name="FirstName" Type="varchar" MaxLength="12" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="category_name" Type="varchar" MaxLength="23" Nullable="false" />
+          <Property Name="advertiserName" Type="varchar" MaxLength="69" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AssesmentDBModelStoreContainer">
+          <EntitySet Name="adtrack_test" EntityType="Self.adtrack_test" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AssesmentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adtrack_test">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="TimeStamp" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PlatformType" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DeviceModel" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageName" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="73" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="CompanyId" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BrandName" Type="String" MaxLength="78" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="24" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="is_youtube" Type="Boolean" Nullable="false" />
+          <Property Name="GDriveLink" Type="String" MaxLength="33" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DestinationLink" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="FirstName" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="category_name" Type="String" MaxLength="23" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="advertiserName" Type="String" MaxLength="69" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="AssesmentDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adtrack_test" EntityType="Self.adtrack_test" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AssesmentDBModelStoreContainer" CdmEntityContainer="AssesmentDBEntities">
+          <EntitySetMapping Name="adtrack_test">
+            <EntityTypeMapping TypeName="AssesmentDBModel.adtrack_test">
+              <MappingFragment StoreEntitySet="adtrack_test">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="TimeStamp" ColumnName="TimeStamp" />
+                <ScalarProperty Name="PlatformType" ColumnName="PlatformType" />
+                <ScalarProperty Name="DeviceModel" ColumnName="DeviceModel" />
+                <ScalarProperty Name="ImageName" ColumnName="ImageName" />
+                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+                <ScalarProperty Name="BrandName" ColumnName="BrandName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="is_youtube" ColumnName="is_youtube" />
+                <ScalarProperty Name="GDriveLink" ColumnName="GDriveLink" />
+                <ScalarProperty Name="DestinationLink" ColumnName="DestinationLink" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="advertiserName" ColumnName="advertiserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
